@@ -1,0 +1,196 @@
+.signup_parent_container {
+  font-family: var(--font);
+}
+
+.signup_form_container h1 {
+  font-size: 2rem;
+  width: 100%;
+  padding: 15px 0 45px 45px;
+}
+
+.signup_form_container form.signup_form {
+  max-width: 600px;
+  padding: 0 10px;
+}
+
+.signup_form_container form.signup_form label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.signup_form_container
+  form.signup_form
+  input:not([data-type="submit_btn"] input, [data-type="password_content"]
+    input) {
+  display: block;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 8px 12px;
+  background-color: rgb(80, 80, 80);
+}
+
+[data-type="firstname_content"] {
+  max-width: 200px;
+
+  margin-right: 10px;
+}
+[data-type="lastname_content"] {
+  max-width: 200px;
+
+  margin-left: 10px;
+}
+
+[data-type="firstname_content"] input,
+[data-type="lastname_content"] input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgb(197, 197, 197);
+}
+
+[data-type="firstname_content"] input:focus,
+[data-type="lastname_content"] input:focus {
+  outline: 1px solid rgb(102, 255, 102);
+}
+
+[data-type="password_content"] {
+  position: relative;
+}
+
+[data-type="password_content"] ul {
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+[data-type="password_content"] ul li {
+  font-size: 12px;
+}
+
+[data-type="password_content"] ul li i{
+  border-radius: 50%;
+  background-color: rgb(102, 255, 102);
+  color: black;
+  padding: 2px 3px;
+  font-size: 10px;
+  margin-right: 5px;
+  visibility: hidden;
+  transition: visibility 0.3s ease-in-out;
+}
+
+[data-type="password_content"] input {
+  padding-right: 80px;
+  display: block;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 8px 45px 8px 12px;
+  background-color: rgb(80, 80, 80);
+  width: 100%;
+  border: 1px solid rgb(197, 197, 197);
+}
+
+
+
+[data-type="password_content"] img {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 27%;
+  right: 3%;
+}
+
+[data-type="password_content"],
+[data-type="username_content"],
+[data-type="email_content"] {
+  max-width: 422px;
+  margin: 15px 0;
+}
+
+[data-type="username_content"] input,
+[data-type="email_content"] input {
+  width: 100%;
+  border: 1px solid rgb(197, 197, 197);
+}
+[data-type="submit_btn"] {
+  max-width: 422px;
+  margin-top: 40px;
+}
+[data-type="submit_btn"] input {
+  width: 100%;
+  background-color: var(--bg-color);
+  display: block;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 8px 12px;
+}
+
+.signup_form_container button {
+  width: 422px;
+  display: block;
+  border: 2px solid rgb(102, 255, 102);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin: 15px 0;
+  padding: 8px 0;
+}
+
+[data-type="password_content"] input:focus,
+[data-type="username_content"] input:focus,
+[data-type="email_content"] input:focus {
+  outline: 1px solid rgb(102, 255, 102);
+}
+
+.blur {
+  filter: blur(0.3rem);
+}
+
+.caption_container .caption_content {
+  max-width: 600px;
+  padding: 0 25px;
+}
+.caption_container h2 {
+  font-size: 3rem;
+
+  font-weight: bold;
+}
+
+.flash_message_overlay {
+  opacity: 0.8;
+  transition: all 1s ease;
+}
+
+.flash_message {
+  animation: animate 0.4s ease-in-out;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .caption_container {
+    display: none;
+  }
+
+  .signup_form_container {
+    width: 100%;
+    padding: 0 20px;
+
+    margin: 0 auto;
+  }
+
+  .signup_form_container h1 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .signup_form_container button {
+    width: 100%;
+  }
+}

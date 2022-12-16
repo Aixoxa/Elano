@@ -1,0 +1,216 @@
+.demography_content {
+  padding: 0 15px 0 50px;
+  font-size: 14px;
+}
+
+h2.demo_header{
+  margin-left: 60px;
+}
+
+.demography_content h4 {
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+
+.demography_content label {
+  margin: 0 10px;
+}
+
+.demo_radio {
+  display: inline-flex;
+  align-items: center;
+}
+
+.demo_radio span {
+  height: 20px;
+  width: 20px;
+  border: 2px solid #1848d8;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: 5px;
+}
+
+.demo_radio span::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #1848d8;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+.demo_radio input {
+  display: none;
+}
+
+.demo_radio input:checked + span::after {
+  transform: scale(1);
+}
+
+.hobbies_container {
+  display: flex;
+  width: 500px;
+}
+
+.hobbies_container ul {
+  margin-right: 15px;
+}
+
+.hobbies_container ul,
+.signup_interests {
+  list-style: none;
+}
+
+.signup_interests label {
+  margin: 0;
+}
+
+
+.hobbies_container ul li{
+  margin: 2px 0;
+}
+
+.hobbies_container ul li input,
+.signup_interests li input {
+  display: none;
+}
+
+.hobbies_container ul li label span,
+.signup_interests li label span {
+  border: 2px solid #1848d8;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin:0 5px;
+  transform: translateY(1.5px);
+}
+
+.hobbies_container ul li label span::after,
+.signup_interests li label span::after {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+  height: 16px;
+  width: 16px;
+  display: block;
+  background-color: #1848d8;
+  margin-right: 5px;
+  transform: scale(0);
+  transition: all 0.5s linear;
+}
+
+.hobbies_container ul li input:checked + span::after,
+.signup_interests li input:checked + span::after {
+  transform: translateY(-1.5px) scale(1);
+}
+.pill_container {
+  max-width: 860px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pill_container label {
+  display: inline-block;
+  position: relative;
+  border: 2px solid #1848d8;
+  padding: 2px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  white-space: nowrap;
+  max-width: auto;
+  margin: 2px 10px;
+}
+
+.pill_container label::before {
+  content: "\2b";
+  font-weight: 600;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  padding: 0 3px;
+  position: relative;
+  top: -1px;
+}
+
+.pill_container label input {
+  display: none;
+}
+
+.pill_container label span {
+  position: absolute;
+  background-color: #1848d8;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  padding: 2px 10px;
+  border-radius: 15px;
+  transform: scale(0);
+  /* transition: all 0.3s ease; */
+}
+
+.pill_container label span::before {
+  content: "\f00c";
+  font-weight: 600;
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  padding: 0 3px;
+  position: relative;
+  top: -1px;
+}
+
+.pill_container label input:checked + span {
+  transform: scale(1);
+}
+
+.signup_interests {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+}
+
+.signup_interests li {
+  margin: 0 10px;
+}
+
+.signup_btn {
+  max-width: 300px;
+  margin: 20px auto;
+  background-color: #1848d8;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.signup_btn input {
+  width: 100%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 990px) {
+  h2.demo_header{
+    margin-left: 20px;
+  }
+  .demography_content {
+    padding: 0 15px;
+    font-size: 14px;
+  }
+  
+  .hobbies_container {
+    width: 100%;
+  }
+
+  .signup_btn {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 550px){
+  .hobbies_container{
+    flex-flow: column;
+  }
+}

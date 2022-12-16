@@ -1,0 +1,30 @@
+.user_feeds_container {
+  background-color: rgb(15, 15, 15);
+  border-radius: 15px;
+  padding-top: 15px;
+  padding-bottom: 100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.user_feeds_container h3 {
+  font-size: 1.1rem;
+  padding: 0 20px;
+}
+
+.user_feeds_container ul {
+  padding: 0 20px;
+}
+
+.user_feeds_container ul li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin: 18px 0;
+}
+
+.user_feeds_container ul li h4 span:last-child {
+  color: gray;
+}
+
+
