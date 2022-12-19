@@ -71,11 +71,17 @@ function Chatnav({ setChatEvent }) {
 
       {/* MOBILE CHAT NAV */}
       <div
-        className="bg-red-600 chat_nav_parent_container pr-10"
+        className="chat_nav_parent_container pr-10"
         ref={mobileNav}
+        style={{ backgroundColor: "#2a3036", borderBottomRightRadius: "30px" }}
       >
-        <p onClick={() => (showNav ? setShowNav(false) : setShowNav(true))}>
-          click me!
+        <p style={{ height: 28, padding: "4px 5px 5px" }}>
+          <img
+            src="../images/icons/ham.png"
+            alt=""
+            className="h-5 w-8 "
+            onClick={() => (showNav ? setShowNav(false) : setShowNav(true))}
+          />
         </p>
         <Bounce when={showNav} collapse>
           <div className="mobile_chatnav_container">
@@ -123,7 +129,7 @@ function Chatnav({ setChatEvent }) {
               </li>
             </ul>
             <h2 className="text-xl font-semibold transform translate-x-3">
-              ELANO
+              <Link to="/">ELANO</Link>
             </h2>
           </div>
         </Bounce>

@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "../../Assets/NAVBAR/Navbar";
-import { Bounce, Fade} from "react-reveal";
+import { Fade } from "react-reveal";
 
 function Home() {
   const settings = {

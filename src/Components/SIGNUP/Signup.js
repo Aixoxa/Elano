@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Signup.css";
 import {
   Demography,
@@ -33,7 +33,6 @@ function Signup() {
   const [demoStatus, setDemoStatus] = useState(false);
   const [badgeStatus, setBadgeStatus] = useState(false);
   const [emailStatus, setEmailStatus] = useState(false);
-  const [showEmailConfirmation, setShowEmailConfirmation] = useState(true);
 
   // SIGNUP EVENT STATE
   const [event, setEvent] = useState(1);
@@ -48,45 +47,14 @@ function Signup() {
       : "";
   };
 
+  console.log(firstName, lastName, password, email, profileName);
+
   return (
     <Bounce right>
       <div
         style={{ zIndex: 1 }}
         className="signup_parent_container min-h-screen flex relative"
       >
-        {showEmailConfirmation && event == 2 && emailStatus && (
-          <>
-            <div
-              style={{ zIndex: 3 }}
-              className="flash_message_overlay absolute bg-black w-full h-full"
-            ></div>
-
-            <div
-              style={{
-                maxWidth: 450,
-                height: 400,
-                zIndex: 5,
-                opacity: 1,
-              }}
-              className="flash_message text-black px-10 transform absolute left-0 right-0 bottom-0 -top-1/3 m-auto bg-white rounded-2xl"
-            >
-              <img
-                className="h-44 w-44 mx-auto mt-8"
-                src="../images/timo.jpg"
-                alt=""
-              />
-              <p className="text-sm text-center mt-16">
-                Hi John, your email has been confirmed. Welcome to
-                <span className="ml-1 font-bold">ELANO!</span> Before we can
-                make any real difference in today's society, we need to start
-                from the grassroot. There's no society without it's community.
-                Help us identify your
-                <span className="ml-1 font-bold">TRIBE.</span>
-              </p>
-            </div>
-          </>
-        )}
-
         <div className="signup_form_container bg-transparent min-h-full w-1/2 flex flex-col items-center flex-wrap pb-6">
           <h1>ELANO</h1>
 
@@ -98,7 +66,7 @@ function Signup() {
               emailStatus={emailStatus}
             />
 
-            {event == 3 && emailStatus && (
+            {event === 3 && emailStatus && (
               <Demography event={setEvent} status={setDemoStatus} />
             )}
 
@@ -125,17 +93,32 @@ function Signup() {
                   <div className="flex">
                     <div className="" data-type="firstname_content">
                       <label htmlFor="fname">First Name</label>
-                      <input type="text" id="fname" required />
+                      <input
+                        type="text"
+                        id="fname"
+                        required
+                        onChange={(e) => setFirstName(e.target.value)}
+                      />
                     </div>
                     <div className="" data-type="lastname_content">
                       <label htmlFor="lname">Last Name</label>
-                      <input type="text" id="lname" required />
+                      <input
+                        type="text"
+                        id="lname"
+                        required
+                        onChange={(e) => setLastName(e.target.value)}
+                      />
                     </div>
                   </div>
 
                   <div className="" data-type="email_content">
                     <label htmlFor="email">Email address</label>
-                    <input type="email" id="email" required />
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
                   <div className="" data-type="password_content">
                     <label htmlFor="paswd">Password</label>
@@ -143,7 +126,7 @@ function Signup() {
                       type="password"
                       id="paswd"
                       required
-                      onChange={() =>
+                      onChange={(e) => (
                         FormValidation(
                           "paswd",
                           "character",
@@ -152,8 +135,9 @@ function Signup() {
                           setPasswordCharacter,
                           setPasswordNumber,
                           setPasswordSymbol
-                        )
-                      }
+                        ),
+                        setPassword(e.target.value)
+                      )}
                     />
                     {showPassword ? (
                       <img
@@ -191,6 +175,7 @@ function Signup() {
                       id="uname"
                       placeholder="Profile name"
                       required
+                      onChange={(e) => setProfileName(e.target.value)}
                     />
                   </div>
 

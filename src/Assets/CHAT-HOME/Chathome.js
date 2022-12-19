@@ -1,6 +1,5 @@
 import React from "react";
 import "./Chathome.css";
-import Search from "../SEARCH/Search";
 
 function Chathome() {
   return (

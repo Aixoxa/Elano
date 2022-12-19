@@ -76,9 +76,8 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     padding: 20px 0;
-
     position: fixed;
-    background-color: rgb(42, 48, 54);
+    background-color: #2a3036;
     width: 100%;
     z-index: 999;
   }

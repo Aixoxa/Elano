@@ -34,7 +34,7 @@ function Chat() {
             <Search />
           </div>
           {/* USERS HOME */}
-          {chatEvent == 2 && (
+          {chatEvent === 2 && (
             <Fade>
               <div className="users_home">
                 <Chathome />
@@ -43,7 +43,7 @@ function Chat() {
           )}
 
           {/* USERS */}
-          {chatEvent == 3 && (
+          {chatEvent === 3 && (
             <Fade>
               <div className="users_container">
                 <div className="users">
